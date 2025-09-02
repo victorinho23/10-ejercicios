@@ -107,28 +107,27 @@
     </div>
 
     <script>
-        // Espera a que el HTML esté cargado para ejecutar el script.
         document.addEventListener('DOMContentLoaded', () => {
             const calcularBtn = document.getElementById('btn-calcular');
             const resultadoEl = document.getElementById('resultado');
             const inputsNotas = document.querySelectorAll('.nota-input');
 
             calcularBtn.addEventListener('click', () => {
-                // Convierte los valores de los inputs en un array de números.
+
                 const notas = Array.from(inputsNotas).map(input => parseFloat(input.value));
 
-                // Valida si alguna de las notas no es un número.
+
                 if (notas.some(isNaN)) {
                     resultadoEl.textContent = 'Error: Ingresa todas las notas.';
-                    resultadoEl.style.color = '#e74c3c'; // Rojo para el error.
+                    resultadoEl.style.color = '#e74c3c';
                     return;
                 }
 
-                // Calcula la suma y el promedio de forma automática.
+
                 const suma = notas.reduce((total, nota) => total + nota, 0);
                 const promedio = suma / notas.length;
 
-                // Muestra el resultado y restaura el color.
+
                 resultadoEl.textContent = `El promedio es: ${promedio.toFixed(2)}`;
                 resultadoEl.style.color = '#2c3e50';
             });
