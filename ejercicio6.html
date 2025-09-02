@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h2>Calculadora de paga</h2>
+  <label for="horas">Horas trabajadas:</label>
+  <input type="number" id="horas" min="0"><br><br>
+  <label for="coste">Coste por hora:</label>
+  <input type="number" id="coste" min="0" step="0.01"><br><br>
+  <button onclick="calcularPaga()">Calcular paga</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularPaga() {
+      const horas = parseFloat(document.getElementById('horas').value);
+      const coste = parseFloat(document.getElementById('coste').value);
+      if (isNaN(horas) || isNaN(coste)) {
+        document.getElementById('resultado').textContent = 'Por favor, ingresa valores válidos.';
+        return;
+      }
+      const paga = horas * coste;
+      document.getElementById('resultado').textContent = `La paga correspondiente es: $${paga.toFixed(2)}`;
+    }
+  </script>
+    
+</body>
+</html>
