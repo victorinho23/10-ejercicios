@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Área de un Cuadrado</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: rgb(255, 255, 255);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        input,
+        button {
+            padding: 0.5em;
+            margin-top: 0.5em;
+            font-size: 1em;
+        }
+        
+        #resultado {
+            margin-top: 1em;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Área de un Cuadrado</h1>
+        <label for="ladoInput">Introduce la longitud del lado:</label>
+        <br>
+        <input type="number" id="ladoInput" placeholder="Ej: 5">
+        <br><br>
+        <button onclick="calcularArea()">Calcular Área</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularArea() {
+            const ladoInput = document.getElementById('ladoInput');
+            const resultadoParrafo = document.getElementById('resultado');
+            const lado = parseFloat(ladoInput.value);
+
+            if (isNaN(lado) || lado <= 0) {
+                resultadoParrafo.textContent = "Por favor, introduce un número positivo válido.";
+                resultadoParrafo.style.color = "red";
+                return;
+            }
+            const area = lado * lado;
+            resultadoParrafo.style.color = "green";
+            resultadoParrafo.textContent = `El área de un cuadrado con lado ${lado} es: ${area}`;
+        }
+    </script>
+
+</body>
+
+</html>
