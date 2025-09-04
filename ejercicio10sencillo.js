@@ -14,3 +14,5 @@ const precioHora = 10000;
       let pago = parseInt(horas) * precioHora;
       nominaDiv.innerHTML += `<p>Obrero ${i} - Pago: ${pago.toLocaleString()} pesos</p>`;
     }
+
+    

@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nómina de Obreros</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  <h1>Nómina de Obreros Calificados</h1>
-  <div id="nomina"></div>
+    <script>
+let inversion = (prompt ("ingrese la cantidad a invertir: "))
+let interesanual = parseFloat(prompt ("ingrese el interes anual: ")) 
+let años = (prompt ("ingrese la cantidad de años: "))
+let obtenido = inversion * interesanual * años;
 
-  <script>
-    const precioHora = 10000;
-    const totalObreros = 50;
-    const nominaDiv = document.getElementById("nomina");
+document.write ("el valor a invertir es: " + inversion + "<br>")
+document.write ("el interes anual es de: " + interesanual + "%" + "<br>")
+document.write ("la cantidad de años es de: " + años + "<br>")
+document.write ("capital obtenido: "  + obtenido + "<br>")
 
-    for (let i = 1; i <= totalObreros; i++) {
-      let horas = prompt(`Obrero ${i}: Ingrese horas trabajadas`);
-      
-   
-      if (horas === null || isNaN(horas) || horas.trim() === "") {
-        alert("Entrada inválida. Se asignarán 0 horas.");
-        horas = 0;
-      }
 
-      let pago = parseInt(horas) * precioHora;
-      nominaDiv.innerHTML += `<p>Obrero ${i} - Pago: ${pago.toLocaleString()} pesos</p>`;
-    }
-  </script>
+alert ("el total obtenido en " + años + " años es de : " + obtenido + "pesos")
+
+
+
+
+
+
+    </script>
 </body>
 </html>
 
