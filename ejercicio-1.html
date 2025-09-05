@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular datos de un rectangulo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #62adef;
+            color: #333;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e7f5fe;
+            border-radius: 4px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .formula {
+            font-style: italic;
+            color: #555;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .comment {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 30px;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Rectángulo</h1>
+    
+    <div class="container">
+        <p>Ingresa los datos del rectángulo para calcular su perímetro y área.</p>
+        
+        <div class="input-group">
+            <label for="base">Base:</label>
+            <input type="number" id="base" placeholder="Ingresa la base">
+        </div>
+        
+        <div class="input-group">
+            <label for="altura">Altura:</label>
+            <input type="number" id="altura" placeholder="Ingresa la altura">
+        </div>
+        
+        <button onclick="calcular()">Calcular</button>
+        
+        <div class="result">
+            <h3>Resultados:</h3>
+            <p>Perímetro: <span id="perimetro">-</span></p>
+            <p>Área: <span id="area">-</span></p>
+        </div>
+        
+        <div class="formula">
+            <p><strong>Fórmulas utilizadas:</strong></p>
+            <p>Perímetro = 2 × (base + altura)</p>
+            <p>Área = base × altura</p>
+        </div>
+        
+    </div>
+
+    <script>
+        // Función para calcular el perímetro y área
+        function calcular() {
+            // Obtener los valores de los inputs
+            let base = document.getElementById('base').value;
+            let altura = document.getElementById('altura').value;
+            
+            // Convertir los valores a números (por defecto vienen como texto)
+            base = parseFloat(base);
+            altura = parseFloat(altura);
+            
+            // Verificar si los valores son válidos
+            if (isNaN(base) || isNaN(altura)) {
+                alert("Por favor, ingresa números válidos");
+                return;
+            }
+            
+            // Calcular el perímetro: 2*(base + altura)
+            let perimetro = 2 * (base + altura);
+            
+            // Calcular el área: base * altura
+            let area = base * altura;
+            
+            // Mostrar los resultados en la página
+            document.getElementById('perimetro').textContent = perimetro;
+            document.getElementById('area').textContent = area;
+        }
+    </script>
+</body>
+</html>

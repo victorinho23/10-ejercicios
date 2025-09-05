@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Hiptenusa</title>
+</head>
+<body>
+    <h1>Calculadora de Hipotenusa</h1>
+    
+    <form id="trianguloForm">
+        <div>
+            <label for="catetoA">Cateto A:</label>
+            <input type="number" id="catetoA" step="any" min="0" required>
+        </div>
+        
+        <div>
+            <label for="catetoB">Cateto B:</label>
+            <input type="number" id="catetoB" step="any" min="0" required>
+        </div>
+        
+        <button type="button" onclick="calcularHipotenusa()">Calcular Hipotenusa</button>
+    </form>
+    
+    <div id="resultado">
+        <h3>Resultado:</h3>
+        <p id="hipotenusaResultado">-</p>
+    </div>
+
+    <script>
+        function calcularHipotenusa() {
+            // tener los valores de los catetos
+            const catetoA = parseFloat(document.getElementById('catetoA').value);
+            const catetoB = parseFloat(document.getElementById('catetoB').value);
+            
+            // Validar que los valores sean números positivos
+            if (isNaN(catetoA) || isNaN(catetoB) || catetoA <= 0 || catetoB <= 0) {
+                alert('Por favor, ingrese valores válidos para ambos catetos (números positivos)');
+                return;
+            }
+            
+            // Aplicacion el teorema de Pitágoras que ees: h² = a² + b²
+            const hipotenusaCuadrada = Math.pow(catetoA, 2) + Math.pow(catetoB, 2);
+            const hipotenusa = Math.sqrt(hipotenusaCuadrada);
+            
+            // Mostrar el resultado solamente con 2 decimales
+            document.getElementById('hipotenusaResultado').textContent = 
+                `La hipotenusa es: ${hipotenusa.toFixed(2)}`;
+        }
+        // .toFixed(2) limita el resultado a 2 decimales para no mostrar muchos decimales innecesarios
+    </script>
+</body>
+</html>
