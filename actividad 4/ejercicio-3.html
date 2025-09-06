@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Edad</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Verificador de Mayoría de Edad</h1>
+    <p>Presiona el botón para que el programa te pida tu edad.</p>
+    <button onclick="verificarEdad()">Verificar Edad</button>
+
+    <script>
+        function verificarEdad() {
+            // 1. Solicitar la edad al usuario
+            const edadInput = prompt("Por favor, ingrese su edad:");
+
+            // 2. Convertir la entrada a un número y validar
+            const edad = parseInt(edadInput);
+
+            if (isNaN(edad) || edad < 0) {
+                alert("Error: Debe ingresar un número positivo válido.");
+            } else if (edad >= 18) {
+                alert("Usted es MAYOR de edad.");
+            } else {
+                alert("Usted es MENOR de edad.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
