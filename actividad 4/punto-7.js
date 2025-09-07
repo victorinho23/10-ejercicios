@@ -6,7 +6,7 @@ if (cantidad > 450.000) {
     alert ("no aplico para el descuento mi rey")
 }
 
-//en html
+//code en html
 
 //  <h2> queres saber si te ganaste un descuento? </h2>
 //     <h3>Dale doble click, estas cerca!</h3>

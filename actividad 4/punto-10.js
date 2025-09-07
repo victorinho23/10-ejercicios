@@ -9,6 +9,9 @@ if (divisor === 0) {
   alert("El resultado de la división es: " + div);
   document.write ("el resultado fue: " + div)
 }
+
+//en html
+
 //  <script>
       
 // let dividendo = parseFloat(prompt("ingresa el dividendo:"));
@@ -21,6 +24,6 @@ if (divisor === 0) {
 //   let div = dividendo / divisor;
 //   alert("El resultado de la división es: " + div);
 //   document.write ("el resultado fue: " + div)
-// }
+// 
 // </script>
     

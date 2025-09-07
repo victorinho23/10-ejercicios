@@ -16,7 +16,7 @@ if (tipode === tmoto) {
     alert ("estas pagando parquedero de carro y el precio es: " + ope2)
 }
 
-//html
+// en html
 
 //  <h1>Parqueadero</h1>
       

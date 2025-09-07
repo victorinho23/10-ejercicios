@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mayor de Dos Valores</title>
+</head>
+<body>
+    <h2>Encontrar el Mayor de Dos Valores</h2>
+    
+    <script>
+        // Leer dos valores, usaremos 3 y 25, pero pueden ser cualquier otro, pero como queremos que el numero 
+        // pueda varias entonces se usa el prompt para que pueda variar los dos numeros a comparar
+        let valor1 = parseFloat(prompt("Ingrese el primer valor:"));
+        let valor2 = parseFloat(prompt("Ingrese el segundo valor:"));
+        
+        // Determinar cuál es el mayor, aqui se usan los condicionales, if y else para que muestre en pantalla cual es mayor
+        let resultado;
+        if (valor1 > valor2) {
+            resultado = "El mayor es: " + valor1;
+        } else {
+            resultado = "El mayor es: " + valor2;
+        }
+        
+        // Mostrar resultado en pantalla
+        document.write("<h3>" + resultado + "</h3>");
+        // prompt() : pide al usuario que ingrese un valor
+        // parseFloat() : convierte el valor ingresado a un número
+        // document.write() : muestra el resultado en la página web
+        // if...else : estructura condicional para comparar los valores
+    </script>
+</body>
+</html>

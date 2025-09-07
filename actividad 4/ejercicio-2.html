@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mayor y Menor de Tres Valores</title>
+</head>
+<body>
+    <h2>Encontrar el Mayor y Menor de Tres Valores</h2>
+    
+    <script>
+        // Leer tres valores, se usan los mismos codigos que el ejercicio anterior pero ahora son tres valores
+        let numero1 = parseFloat(prompt("Ingrese el primer valor:"));
+        let numero2 = parseFloat(prompt("Ingrese el segundo valor:"));
+        let numero3 = parseFloat(prompt("Ingrese el tercer valor:"));
+        
+        // Validar que los tres valores sean distintos con una estructura condicional if y en caso de ser iguales presentara un mensaje de error,
+        // en caso de ser distintos se procede a encontrar el mayor y menor de los tres valores
+        if (numero1 === numero2 || numero1 === numero3 || numero2 === numero3) {
+            alert("ERROR: Los tres valores deben ser distintos");
+        } else {
+            // Encontrar el mayor
+            let mayor = numero1;
+            if (numero2 > mayor) mayor = numero2;
+            if (numero3 > mayor) mayor = numero3;
+            
+            // Encontrar el menor
+            let menor = numero1;
+            if (numero2 < menor) menor = numero2;
+            if (numero3 < menor) menor = numero3;
+            
+            // Mostrar resultados en pantalla
+            document.write("<h3>Resultados:</h3>");
+            document.write("<p>El número mayor es: <strong>" + mayor + "</strong></p>");
+            document.write("<p>El número menor es: <strong>" + menor + "</strong></p>");
+            document.write("<p>Valores ingresados: " + numero1 + ", " + numero2 + ", " + numero3 + "</p>");
+        }
+    </script>
+</body>
+</html>

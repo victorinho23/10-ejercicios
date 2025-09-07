@@ -5,7 +5,7 @@ if (radio <= 0 ) {
     alert ("Como?, eso no se puede hacer papi")
 }
 
-//codificacion en html
+// en html
 
 // let radio = prompt ("ingrese el radio: ")
 
